@@ -1,0 +1,15 @@
+lnL_null = -9939.110230
+lnL_alt = -9938.565526
+df = 1
+#    df = np_alt - np_null  # Degrees of freedom
+
+def likelihood_ratio_test(lnL_null, lnL_alt):
+    """Perform likelihood ratio test and return chi-square statistic and p-value."""
+    chi2_stat = 2 * (lnL_alt - lnL_null)
+    return chi2_stat
+
+# Calculate the chi-square statistic, which is the same as the LRT statistic
+chi2_stat = likelihood_ratio_test(lnL_null, lnL_alt)
+
+# Print the result
+print(f"Chi-square statistic: {chi2_stat}")
